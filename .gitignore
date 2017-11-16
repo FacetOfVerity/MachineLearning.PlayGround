@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/MachineLearning.PlayGround/MachineLearning.PlayGround/bin/Debug/netcoreapp2.0
+/MachineLearning.PlayGround/.vs/MachineLearning.PlayGround/v15
+/MachineLearning.PlayGround/MachineLearning.PlayGround/obj
