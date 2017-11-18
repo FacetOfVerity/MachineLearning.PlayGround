@@ -14,8 +14,8 @@ namespace MachineLearning.PlayGround
             var data = rawData.Skip(1).Select(row => row.Split(',')).Select(row => new Row
             {
                 Gender = Enum.Parse<Gender>(row[0]),
-                Height = int.Parse(row[1]),
-                Weight = int.Parse(row[2])
+                Height = double.Parse(row[1]),
+                Weight = double.Parse(row[2])
             }).ToArray();
 
             Console.WriteLine("Данные:");
@@ -28,16 +28,15 @@ namespace MachineLearning.PlayGround
             var test = data.Skip(10).Take(5).ToArray();
 
             var classifier = new KNearestNeighbors(2);
-            var values = train.Select(a => new double[] {a.Weight, a.Height}).ToArray();
+            var values = train.Select(a => new double[] {a.Height, a.Weight}).ToArray();
             var cases = train.Select(a => (int)a.Gender).ToArray();
             classifier.Learn(values, cases);
             
-
-            Console.WriteLine("Тест:");
+            Console.WriteLine("\nТест:");
             foreach (var row in test)
             {
                 Console.WriteLine(row);
-                var tr = new double[] {row.Weight, row.Height};
+                var tr = new double[] {row.Height, row.Weight};
 
                 var decision = classifier.Decide(tr);
                 Console.WriteLine($"Ответ классификатора: {(Gender)decision}");
