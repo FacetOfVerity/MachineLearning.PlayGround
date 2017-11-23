@@ -7,7 +7,7 @@ namespace MachineLearning.PlayGround
     {
         static void Main(string[] args)
         {
-            KnnFirstSample.Start();
+            KnnSecondSample.Start();
 
             Console.ReadKey();
         }
