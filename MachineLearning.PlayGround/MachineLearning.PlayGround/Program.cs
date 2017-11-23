@@ -24,8 +24,8 @@ namespace MachineLearning.PlayGround
                 Console.WriteLine(row);
             }
 
-            var train = data.Take(10).ToArray();
-            var test = data.Skip(10).Take(5).ToArray();
+            var train = data.Take(12).ToArray();
+            var test = data.Skip(12).Take(6).ToArray();
 
             var classifier = new KNearestNeighbors(2);
             var values = train.Select(a => new double[] {a.Height, a.Weight}).ToArray();
@@ -48,8 +48,8 @@ namespace MachineLearning.PlayGround
 
     public enum Gender
     {
-        Male = 1,
-        Female = 2
+        Male = 0,
+        Female = 1
     }
 
     public class Row
