@@ -1,5 +1,6 @@
 ﻿using System;
 using MachineLearning.PlayGround.Samples;
+using MachineLearning.PlayGround.Samples.AssociationRules;
 
 namespace MachineLearning.PlayGround
 {
@@ -7,7 +8,8 @@ namespace MachineLearning.PlayGround
     {
         static void Main(string[] args)
         {
-            KnnSecondSample.Start();
+            //KnnSecondSample.Start();
+            AprioriExample.Start();
 
             Console.ReadKey();
         }
